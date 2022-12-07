@@ -1,12 +1,8 @@
---[[
-    ScoreState Class
-    Author: Colton Ogden
-    cogden@cs50.harvard.edu
+local bronze = love.graphics.newImage('images/bronze.png')
+local silver = love.graphics.newImage('images/silver.png')
+local gold = love.graphics.newImage('images/gold.png')
 
-    A simple state used to display the player's score before they
-    transition back into the play state. Transitioned to from the
-    PlayState when they collide with a Pipe.
-]]
+
 
 ScoreState = Class{__includes = BaseState}
 
@@ -29,6 +25,17 @@ function ScoreState:render()
     -- simply render the score to the middle of the screen
     love.graphics.setFont(flappyFont)
     love.graphics.printf('Oof! You lost!', 0, 64, VIRTUAL_WIDTH, 'center')
+    if self.score < 5 then
+        love.graphics.draw(bronze,100,100,0,0.5,0.5)
+        love.graphics.draw(bronze,350,100,0,0.5,0.5) 
+    elseif self.score >=5 and self.score <10 then
+        love.graphics.draw(silver,100,100,0,0.5,0.5)
+        love.graphics.draw(silver,350,100,0,0.5,0.5) 
+    else
+        love.graphics.draw(gold,100,100,0,0.5,0.5)
+        love.graphics.draw(gold,350,100,0,0.5,0.5) 
+    end
+      
 
     love.graphics.setFont(mediumFont)
     love.graphics.printf('Score: ' .. tostring(self.score), 0, 100, VIRTUAL_WIDTH, 'center')
