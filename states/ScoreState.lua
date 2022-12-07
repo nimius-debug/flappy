@@ -27,15 +27,15 @@ function ScoreState:render()
     love.graphics.printf('Oof! You lost!', 0, 64, VIRTUAL_WIDTH, 'center')
     if self.score < 5 then
         love.graphics.draw(bronze,100,100,0,0.5,0.5)
-        love.graphics.draw(bronze,350,100,0,0.5,0.5) 
+        love.graphics.draw(bronze,350,100,0,0.5,0.5)
     elseif self.score >=5 and self.score <10 then
         love.graphics.draw(silver,100,100,0,0.5,0.5)
-        love.graphics.draw(silver,350,100,0,0.5,0.5) 
+        love.graphics.draw(silver,350,100,0,0.5,0.5)
     else
         love.graphics.draw(gold,100,100,0,0.5,0.5)
-        love.graphics.draw(gold,350,100,0,0.5,0.5) 
+        love.graphics.draw(gold,350,100,0,0.5,0.5)
     end
-      
+
 
     love.graphics.setFont(mediumFont)
     love.graphics.printf('Score: ' .. tostring(self.score), 0, 100, VIRTUAL_WIDTH, 'center')
