@@ -17,7 +17,7 @@ end
 function PauseState:enter(params)
     scrolling = false
     sounds['music']:pause()
-    sounds['pause']:play()
+    -- sounds['pause']:play()
     self.bird = params.bird
     self.pipePairs = params.pipePairs
     self.timer = params.timer
